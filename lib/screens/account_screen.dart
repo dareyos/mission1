@@ -22,8 +22,10 @@ class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 246, 204, 249),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 202, 144, 226),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -36,7 +38,7 @@ class _AccountScreenState extends State<AccountScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
-            tooltip: 'Open shopping cart',
+            tooltip: 'Выйти из аккаунта',
             onPressed: () => signOut(),
           ),
         ],
@@ -45,11 +47,11 @@ class _AccountScreenState extends State<AccountScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Ваш Email: ${user?.email}'),
-            TextButton(
-              onPressed: () => signOut(),
-              child: const Text('Выйти'),
-            ),
+            Text('Ваш Email: ${user?.email}', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w600),),
+            // TextButton(
+            //   onPressed: () => signOut(),
+            //   child: const Text('Выйти'),
+            // ),
           ],
         ),
       ),

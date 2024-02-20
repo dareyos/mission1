@@ -64,8 +64,10 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 246, 204, 249),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 202, 144, 226),
         title: const Text('Сброс пароля'),
       ),
       body: Padding(

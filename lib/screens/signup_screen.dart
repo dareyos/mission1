@@ -79,8 +79,10 @@ class _SignUpScreen extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 246, 204, 249),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 202, 144, 226),
         title: const Text('Зарегистрироваться'),
       ),
       body: Padding(
@@ -102,7 +104,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                   hintText: 'Введите Email',
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 16),
               TextFormField(
                 autocorrect: false,
                 controller: passwordTextInputController,
@@ -125,7 +127,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 16),
               TextFormField(
                 autocorrect: false,
                 controller: passwordTextRepeatInputController,
@@ -153,16 +155,11 @@ class _SignUpScreen extends State<SignUpScreen> {
                 onPressed: signUp,
                 child: const Center(child: Text('Регистрация')),
               ),
-              const SizedBox(height: 30),
-              TextButton(
+              const SizedBox(height: 16),
+              ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(),
-                child: const Text(
-                  'Войти',
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                  ),
+                child: const Center(child: Text('Войти')),
                 ),
-              ),
             ],
           ),
         ),

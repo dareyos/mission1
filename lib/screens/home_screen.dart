@@ -11,8 +11,10 @@ class HomeScreen extends StatelessWidget {
     final user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 246, 204, 249),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 202, 144, 226),
         title: const Text('Главная страница'),
         actions: [
           IconButton(
@@ -32,7 +34,7 @@ class HomeScreen extends StatelessWidget {
             },
             icon: Icon(
               Icons.person,
-              color: (user == null) ? Colors.white : Colors.yellow,
+              color: (user == null) ? Colors.white : Color.fromARGB(255, 137, 225, 241),
             ),
           ),
         ],
@@ -40,8 +42,8 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: (user == null)
-              ? const Text("Контент для НЕ зарегистрированных в системе")
-              : const Text('Контент для ЗАРЕГИСТРИРОВАННЫХ в системе'),
+              ? const Text("Пожалуйста, войдите в свой аккаунт или зарегистрируйтесь!", style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),)
+              : const Text('Добро пожаловать!!!', style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),),
           //child: Text('Контент для НЕ зарегистрированных в системе'),
         ),
       ),

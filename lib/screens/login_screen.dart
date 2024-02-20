@@ -67,8 +67,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 246, 204, 249),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 202, 144, 226),
         title: const Text('Войти'),
       ),
       body: Padding(
@@ -86,11 +88,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         ? 'Введите правильный Email'
                         : null,
                 decoration: const InputDecoration(
+                  fillColor: Color.fromRGBO(255, 255, 255, 1),
                   border: OutlineInputBorder(),
                   hintText: 'Введите Email',
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 16),
               TextFormField(
                 autocorrect: false,
                 controller: passwordTextInputController,
@@ -118,20 +121,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: login,
                 child: const Center(child: Text('Войти')),
               ),
-              const SizedBox(height: 30),
-              TextButton(
+              const SizedBox(height: 16),
+              ElevatedButton(
                 onPressed: () => Navigator.of(context).pushNamed('/signup'),
-                child: const Text(
-                  'Регистрация',
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
+                child: const Center(child: Text('Регистрация'))
               ),
-              TextButton(
+              const SizedBox(height: 16),
+              ElevatedButton(
                 onPressed: () =>
                     Navigator.of(context).pushNamed('/reset_password'),
-                child: const Text('Сбросить пароль'),
+                child: const Center(child: Text('Забыли пароль?')),
               ),
             ],
           ),

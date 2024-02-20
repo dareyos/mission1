@@ -76,18 +76,23 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
   Widget build(BuildContext context) => isEmailVerified
       ? const HomeScreen()
       : Scaffold(
-          resizeToAvoidBottomInset: false,
+         backgroundColor: const Color.fromARGB(255, 246, 204, 249),
+          //resizeToAvoidBottomInset: false,
           appBar: AppBar(
+            backgroundColor: const Color.fromARGB(255, 202, 144, 226),
             title: const Text('Верификация Email адреса'),
           ),
           body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
+            // child: Padding(
+            //   padding: EdgeInsets.symmetric(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center
+                ,
                 children: [
                   const Text(
                     'Письмо с подтверждением было отправлено на вашу электронную почту.',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
                     ),
@@ -98,8 +103,8 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                     icon: const Icon(Icons.email),
                     label: const Text('Повторно отправить'),
                   ),
-                  const SizedBox(height: 20),
-                  TextButton(
+                  const SizedBox(height: 16),
+                  ElevatedButton(
                     onPressed: () async {
                       timer?.cancel();
                       await FirebaseAuth.instance.currentUser!.delete();
@@ -112,7 +117,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                     ),
                   )
                 ],
-              ),
+              // ),
             ),
           ),
         );
