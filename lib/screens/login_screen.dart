@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  void togglePasswordView() {
+  void togglePasswordView() { //для того чтобы посмотреть какой пароль ввел
     setState(() {
       isHiddenPassword = !isHiddenPassword;
     });
